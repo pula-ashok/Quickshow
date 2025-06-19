@@ -9,7 +9,7 @@ const FeaturedSection = () => {
     const navigate = useNavigate();
   return (
     <div className='px-6 md:px-16 lg:px-34 overflow-hidden'>
-        <div className='relative flex items-center relative justify-between pt-20 pb-10'>
+        <div className='relative flex items-center justify-between pt-20 pb-10'>
            <BlueCircle top='0' right='-80px'/>
            <p className='text-gray-300 text-lg font-medium'>Now Showing</p> 
            <button onClick={()=>{navigate('/movies');scrollTo(0,0)}} className='group flex items-center gap-2 text-sm text-gray-300 cursor-pointer'>View All <ArrowRight className='w-4.5 h-4.5 group-hover:translate-x-0.5 transition'/></button>
