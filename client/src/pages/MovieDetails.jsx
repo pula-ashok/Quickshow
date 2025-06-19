@@ -6,6 +6,7 @@ import { timeFormat } from './../libs/timeFormat';
 import BlueCircle from './../components/BlueCircle';
 import DateSelect from '../components/DateSelect';
 import MovieCard from '../components/MovieCard';
+import Loading from '../components/Loading';
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -13,10 +14,12 @@ const MovieDetails = () => {
   const navigate = useNavigate();
   const getShow = async () => {
     const show = dummyShowsData.find(show => show._id === id);
-    setShow({
+   if(show){
+     setShow({
       movie: show,
       dateTime : dummyDateTimeData
     });
+   }
   }
   useEffect(() => {
     getShow();
@@ -62,9 +65,7 @@ const MovieDetails = () => {
         <button onClick={()=>{navigate('/movies');scrollTo(0,0)}} className='px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition-all rounded-md font-medium cursor-pointer'  >Show more</button>
       </div>
     </div>
-    : <div>
-      <div>Loading...</div>
-    </div>
+    : <Loading/>
   )
 }
 
