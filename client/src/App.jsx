@@ -8,11 +8,13 @@ import MovieDetails from './pages/MovieDetails';
 import SeatLayout from './pages/SeatLayout';
 import Favorite from './pages/Favorite';
 import MyBookings from './pages/MyBookings';
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const isAdminRoute = useLocation().pathname.startsWith('/admin');
   return (
     <>
+      <Toaster/>
       {!isAdminRoute && <Navbar/>}
         <Routes>
            <Route path='/' element={<Home/>}/>
